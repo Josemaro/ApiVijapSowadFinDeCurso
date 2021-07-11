@@ -1,6 +1,7 @@
 package com.vijap.api.models;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -27,6 +28,10 @@ public class VentaModel {
     private Long impuesto;
     private Long total;
     private String estado;
+
+    @Getter @Setter
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "venta")
+    private Set<DetalleVentaModel> lista_detalle_ventas;
 
     public Long getIdventa() {
         return idventa;
