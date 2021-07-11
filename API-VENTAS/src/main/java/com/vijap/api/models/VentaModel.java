@@ -4,6 +4,9 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "venta")
 public class VentaModel {
@@ -11,11 +14,12 @@ public class VentaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long idventa;
-
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "id_usuario")
-    private Long idusuario;
     
+    @Getter @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
+    private UsuarioModel usuario;
+
     private String tipo_comprobante;
     private String serie_comprobante;
     private String num_comprobante;
@@ -30,12 +34,7 @@ public class VentaModel {
     public void setIdventa(Long idventa) {
         this.idventa = idventa;
     }
-    public Long getIdusuario() {
-        return idusuario;
-    }
-    public void setIdusuario(Long idusuario) {
-        this.idusuario = idusuario;
-    }
+
     public String getTipo_comprobante() {
         return tipo_comprobante;
     }

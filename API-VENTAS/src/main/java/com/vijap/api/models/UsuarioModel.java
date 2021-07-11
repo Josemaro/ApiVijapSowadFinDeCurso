@@ -1,6 +1,8 @@
 package com.vijap.api.models;
 
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 
@@ -26,7 +28,9 @@ public class UsuarioModel {
     private String clave;
     private Long estado;
 
-    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
+    private Set<VentaModel> lista_ventas;
+
     public Long getIdusuario() {
         return idusuario;
     }
