@@ -26,6 +26,4 @@ public class VentaService {
         return(ArrayList<VentaModel>)ventaRepository.findByNumcomprobante(numerocomprobante);
     }
 
-    
-
 }
