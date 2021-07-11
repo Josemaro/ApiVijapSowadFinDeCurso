@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VentaRepository extends JpaRepository<VentaModel,Long> {
     public abstract ArrayList<VentaModel> findByTipocomprobante(String tipocomprobante);
-    public abstract ArrayList<VentaModel> findByNumcomprobante(String numcomprobante);
+    public abstract ArrayList<VentaModel> findByNumcomprobante(String numcomprobante);  
 }

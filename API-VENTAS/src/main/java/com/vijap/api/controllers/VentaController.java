@@ -2,6 +2,7 @@ package com.vijap.api.controllers;
 
 import java.util.ArrayList;
 
+import com.vijap.api.dto.VentaDto;
 import com.vijap.api.models.VentaModel;
 import com.vijap.api.services.VentaService;
 
@@ -17,8 +18,8 @@ public class VentaController {
     VentaService ventaService;
 
     @GetMapping("/listar")
-    public ArrayList<VentaModel> obtenerVentas(){
-        return ventaService.obtenerVentas();
+    public ArrayList<VentaDto> obtenerVentas(){
+        return (ArrayList<VentaDto>) ventaService.obtenerVentas();
     }
 
 }
