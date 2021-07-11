@@ -1,9 +1,12 @@
 package com.vijap.api.models;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,16 +22,15 @@ public class VentaModel {
     @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private UsuarioModel usuario;
-
-    private String tipo_comprobante;
-    private String serie_comprobante;
-    private String num_comprobante;
+    private String tipocomprobante;
+    private String seriecomprobante;
+    private String numcomprobante;
     private Date fecha;
     private Long impuesto;
     private Long total;
     private String estado;
-
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "venta")
     private Set<DetalleVentaModel> lista_detalle_ventas;
@@ -40,23 +42,23 @@ public class VentaModel {
         this.idventa = idventa;
     }
 
-    public String getTipo_comprobante() {
-        return tipo_comprobante;
+    public String getTipocomprobante() {
+        return tipocomprobante;
     }
-    public void setTipo_comprobante(String tipo_comprobante) {
-        this.tipo_comprobante = tipo_comprobante;
+    public void setTipocomprobante(String tipocomprobante) {
+        this.tipocomprobante = tipocomprobante;
     }
-    public String getSerie_comprobante() {
-        return serie_comprobante;
+    public String getSeriecomprobante() {
+        return seriecomprobante;
     }
-    public void setSerie_comprobante(String serie_comprobante) {
-        this.serie_comprobante = serie_comprobante;
+    public void setSeriecomprobante(String seriecomprobante) {
+        this.seriecomprobante = seriecomprobante;
     }
-    public String getNum_comprobante() {
-        return num_comprobante;
+    public String getNumcomprobante() {
+        return numcomprobante;
     }
-    public void setNum_comprobante(String num_comprobante) {
-        this.num_comprobante = num_comprobante;
+    public void setNumcomprobante(String numcomprobante) {
+        this.numcomprobante = numcomprobante;
     }
     public Date getFecha() {
         return fecha;

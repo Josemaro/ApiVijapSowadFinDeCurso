@@ -1,6 +1,7 @@
 package com.vijap.api.models;
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
