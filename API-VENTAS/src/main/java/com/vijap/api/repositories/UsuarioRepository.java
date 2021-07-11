@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsuarioRepository extends CrudRepository<UsuarioModel,Long>{
     public abstract Optional<UsuarioModel> findByEmail(String email);
-    public abstract Optional<UsuarioModel> findById(Long id);
+    public abstract Optional<UsuarioModel> findByIdusuario(Long idusuario);
     public abstract void deleteById(Long id);
     public abstract void deleteByEmail(String email);
     public abstract boolean existsByEmail(String email);

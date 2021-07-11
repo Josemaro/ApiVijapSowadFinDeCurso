@@ -1,8 +1,8 @@
 package com.vijap.api.models;
 
 
-
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "usuario")
@@ -11,48 +11,63 @@ public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private long id;
+    private Long idusuario;
 
-    private String nombres;
-    private String apellido_paterno;
-    private String apellido_materno;
+    private Long idrol;
+    private String nombre;
+    private String tipo_documento;
+    private String num_documento;
+    private String direccion;
+    private String telefono;
 
     @Column(unique = true, nullable = false)
     private String email;
 
-    private String password;
+    private String clave;
+    private Long estado;
 
-    //private Date fecha_nac;
     
-    public String getPassword() {
-        return password;
+    public Long getIdusuario() {
+        return idusuario;
     }
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIdusuario(Long idusuario) {
+        this.idusuario = idusuario;
     }
-    public long getId() {
-        return id;
+    public Long getIdrol() {
+        return idrol;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setIdrol(Long idrol) {
+        this.idrol = idrol;
     }
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    public String getApellido_paterno() {
-        return apellido_paterno;
+    public String getTipo_documento() {
+        return tipo_documento;
     }
-    public void setApellido_paterno(String apellido_paterno) {
-        this.apellido_paterno = apellido_paterno;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
-    public String getApellido_materno() {
-        return apellido_materno;
+    public String getNum_documento() {
+        return num_documento;
     }
-    public void setApellido_materno(String apellido_materno) {
-        this.apellido_materno = apellido_materno;
+    public void setNum_documento(String num_documento) {
+        this.num_documento = num_documento;
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
     public String getEmail() {
         return email;
@@ -60,16 +75,21 @@ public class UsuarioModel {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getClave() {
+        return clave;
+    }
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    public Long getEstado() {
+        return estado;
+    }
+    public void setEstado(Long estado) {
+        this.estado = estado;
+    }
+
+   
+
     
-    /*
-    public Date getFecha_nac() {
-        return fecha_nac;
-    }
-    public void setFecha_nac(Date fecha_nac) {
-        this.fecha_nac = fecha_nac;
-    }
-    */
-
-
     
 }
