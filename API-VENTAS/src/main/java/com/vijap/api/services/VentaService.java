@@ -37,6 +37,13 @@ public class VentaService {
             ventaAux.setIdventa(v.getIdventa());
             usuarioAux.setIdusuario(v.getUsuario().getIdusuario());                
             usuarioAux.setNombre(v.getUsuario().getNombre());   
+            usuarioAux.setIdrol(v.getUsuario().getIdrol());
+            usuarioAux.setTipo_documento(v.getUsuario().getTipo_documento());
+            usuarioAux.setNum_documento(v.getUsuario().getNum_documento());
+            usuarioAux.setDireccion(v.getUsuario().getDireccion());
+            usuarioAux.setTelefono(v.getUsuario().getTelefono());
+            usuarioAux.setEmail(v.getUsuario().getEmail());
+            usuarioAux.setEstado(v.getUsuario().getEstado());
             ventaAux.setUsuario(usuarioAux);
             ventaAux.setTipocomprobante(v.getTipocomprobante());
             ventaAux.setSeriecomprobante(v.getSeriecomprobante());
@@ -65,13 +72,7 @@ public class VentaService {
             ventaAux.setLista_detalle_ventas(xlista_detalle_ventas);
             ventasDto.add(ventaAux);
         }
-
-
-
         return(ventasDto);
-
-
-
 
     }
 
