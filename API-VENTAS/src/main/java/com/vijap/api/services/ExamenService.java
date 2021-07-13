@@ -19,4 +19,8 @@ public class ExamenService {
     public ArrayList<ExamenModel> obtenerExamenes(){
         return(ArrayList<ExamenModel>)examenRepository.findAll();
     }
+
+    public ExamenModel guardarExamen(ExamenModel examen){
+        return examenRepository.save(examen);
+    }
 }
